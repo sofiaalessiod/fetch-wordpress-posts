@@ -24,13 +24,25 @@ function displayPosts(posts) {
       "beforeend"
       `
       <li>${post.title.rendered}</li>
-    `
+      `
     );
   }
 }
 
 
+function displayPostsGrid(posts){
+  const postsGrid = document.querySelector("#posts-grid");
+}
 
-
-
+for (const post of posts) {
+  postsGrid.insertAdjacentHTML(
+    "beforeend",
+    /*html*/ `
+    <article class="grid-item">
+      <img src="${post.acf.image}" alt="${post.title.rendered}" />
+      <h2>${post.title.rendered}</h2>
+    </article>
+  `
+  );
+}
 
